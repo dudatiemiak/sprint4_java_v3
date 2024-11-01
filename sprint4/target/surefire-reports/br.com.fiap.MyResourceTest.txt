@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------
+Test set: br.com.fiap.MyResourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.202 s <<< FAILURE! -- in br.com.fiap.MyResourceTest
+br.com.fiap.MyResourceTest.testGetIt -- Time elapsed: 0.191 s <<< ERROR!
+java.lang.NoClassDefFoundError: jakarta/activation/DataSource
+	at org.glassfish.jaxb.runtime.v2.model.impl.RuntimeBuiltinLeafInfoImpl.<clinit>(RuntimeBuiltinLeafInfoImpl.java:426)
+	at org.glassfish.jaxb.runtime.v2.model.impl.RuntimeTypeInfoSetImpl.<init>(RuntimeTypeInfoSetImpl.java:31)
+	at org.glassfish.jaxb.runtime.v2.model.impl.RuntimeModelBuilder.createTypeInfoSet(RuntimeModelBuilder.java:91)
+	at org.glassfish.jaxb.runtime.v2.model.impl.RuntimeModelBuilder.createTypeInfoSet(RuntimeModelBuilder.java:46)
+	at org.glassfish.jaxb.runtime.v2.model.impl.ModelBuilder.<init>(ModelBuilder.java:119)
+	at org.glassfish.jaxb.runtime.v2.model.impl.RuntimeModelBuilder.<init>(RuntimeModelBuilder.java:55)
+	at org.glassfish.jaxb.runtime.v2.runtime.JAXBContextImpl.getTypeInfoSet(JAXBContextImpl.java:403)
+	at org.glassfish.jaxb.runtime.v2.runtime.JAXBContextImpl.<init>(JAXBContextImpl.java:251)
+	at org.glassfish.jaxb.runtime.v2.runtime.JAXBContextImpl.<init>(JAXBContextImpl.java:77)
+	at org.glassfish.jaxb.runtime.v2.runtime.JAXBContextImpl$JAXBContextBuilder.build(JAXBContextImpl.java:1111)
+	at org.glassfish.jaxb.runtime.v2.ContextFactory.createContext(ContextFactory.java:140)
+	at org.glassfish.jaxb.runtime.v2.ContextFactory.createContext(ContextFactory.java:265)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at jakarta.xml.bind.ContextFinder.newInstance(ContextFinder.java:187)
+	at jakarta.xml.bind.ContextFinder.newInstance(ContextFinder.java:145)
+	at jakarta.xml.bind.ContextFinder.find(ContextFinder.java:330)
+	at jakarta.xml.bind.JAXBContext.newInstance(JAXBContext.java:478)
+	at jakarta.xml.bind.JAXBContext.newInstance(JAXBContext.java:435)
+	at org.glassfish.jersey.server.wadl.internal.WadlApplicationContextImpl.getJAXBContextFromWadlGenerator(WadlApplicationContextImpl.java:121)
+	at org.glassfish.jersey.server.wadl.internal.WadlApplicationContextImpl.isJaxbImplAvailable(WadlApplicationContextImpl.java:270)
+	at org.glassfish.jersey.server.wadl.WadlFeature.configure(WadlFeature.java:65)
+	at org.glassfish.jersey.model.internal.CommonConfig.configureFeatures(CommonConfig.java:722)
+	at org.glassfish.jersey.model.internal.CommonConfig.configureMetaProviders(CommonConfig.java:641)
+	at org.glassfish.jersey.server.ResourceConfig.configureMetaProviders(ResourceConfig.java:832)
+	at org.glassfish.jersey.server.ApplicationHandler.initialize(ApplicationHandler.java:344)
+	at org.glassfish.jersey.server.ApplicationHandler.lambda$initialize$1(ApplicationHandler.java:309)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.processWithException(Errors.java:232)
+	at org.glassfish.jersey.server.ApplicationHandler.initialize(ApplicationHandler.java:308)
+	at org.glassfish.jersey.server.ApplicationHandler.<init>(ApplicationHandler.java:273)
+	at org.glassfish.jersey.server.ApplicationHandler.<init>(ApplicationHandler.java:260)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.<init>(GrizzlyHttpContainer.java:310)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory.createHttpServer(GrizzlyHttpServerFactory.java:98)
+	at br.com.fiap.Main.startServer(Main.java:32)
+	at br.com.fiap.MyResourceTest.setUp(MyResourceTest.java:22)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: java.lang.NullPointerException: Cannot invoke "org.glassfish.grizzly.http.server.HttpServer.stop()" because "this.server" is null
+		at br.com.fiap.MyResourceTest.tearDown(MyResourceTest.java:37)
+		... 3 more
+Caused by: java.lang.ClassNotFoundException: jakarta.activation.DataSource
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 40 more
+
